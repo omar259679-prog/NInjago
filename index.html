@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#250d0e">
+  <title>Ninjago | Colección de ninjas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Teko:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="encabezado" id="inicio">
+    <nav class="container barra" aria-label="Navegación principal">
+      <a href="#inicio" id="irInicio" class="marca">
+        <span class="sello" aria-hidden="true">忍</span>
+        <span>NINJAGO <small>COLECCIÓN NINJA</small></span>
+      </a>
+      <span class="leyenda-barra">EL PODER ESTÁ EN TU EQUIPO</span>
+    </nav>
+  </header>
+
+  <section class="portada">
+    <div class="container portada-contenido columns is-vcentered">
+      <div class="column is-6 portada-texto">
+        <p class="etiqueta-portada">✦ EL PODER DE LOS ELEMENTOS ✦</p>
+        <h1 class="titulo-portada Camaron_salteado">MUNDO<br><span>NINJAGO</span></h1>
+        <p class="subtitulo-portada">Reúne a los ninjas, descubre sus elementos y crea tu propia colección.</p>
+        <button id="btnAgregar" type="button" class="button boton-dorado Camaron_salteado">+ AGREGAR NINJA</button>
+      </div>
+      <div class="column is-6">
+        <div class="escena-hero">
+          <img src="imagenes/equipo.jpg" alt="Ilustración de varios ninjas de Ninjago reunidos">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container contenido">
+    <div id="aviso" class="notification aviso" role="status" aria-live="polite" hidden></div>
+
+    <section id="vistaColeccion">
+      <div class="encabezado-seccion">
+        <div>
+          <p class="sobrelinea">✦ TU EQUIPO ELEMENTAL</p>
+          <h2 class="titulo-seccion">MI COLECCIÓN</h2>
+        </div>
+        <p class="descripcion-seccion">Elige a tu ninja favorito.</p>
+      </div>
+
+      <div class="barra-busqueda columns is-vcentered">
+        <div class="column is-8">
+          <label class="label" for="buscar">BUSCAR NINJA</label>
+          <input id="buscar" class="input Camaron_salteado" type="search"
+                 placeholder="Nombre o elemento: fuego, hielo, agua..." autocomplete="off">
+        </div>
+        <div class="column is-4 has-text-right-tablet">
+          <p id="contador" class="contador" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div id="gridPersonajes" class="columns is-multiline Camaron_salteado" aria-label="Ninjas guardados"></div>
+
+      <div id="sinResultados" class="estado-vacio" hidden>
+        <div class="estado-icono">忍</div>
+        <h3 id="tituloVacio">NO HAY NINJAS</h3>
+        <p id="textoVacio">Intenta con otra búsqueda.</p>
+        <button id="btnEstadoVacio" class="button boton-rojo" type="button">LIMPIAR BÚSQUEDA</button>
+      </div>
+    </section>
+
+    <section id="vistaDetalle" hidden>
+      <button id="volverDetalle" class="button boton-volver" type="button">← VOLVER A LA COLECCIÓN</button>
+      <div class="detalle-tarjeta columns is-vcentered">
+        <div class="column is-5" id="detalleImagen"></div>
+        <div class="column is-7 detalle-texto">
+          <p class="sobrelinea">✦ PERFIL DEL NINJA</p>
+          <h2 id="detalleNombre" class="titulo-seccion"></h2>
+          <p><strong>Elemento / rol:</strong> <span id="detalleRol"></span></p>
+          <p><strong>Origen:</strong> <span id="detalleOrigen"></span></p>
+          <p id="detalleDescripcion" class="descripcion-personaje"></p>
+          <p class="fecha-detalle">Agregado: <span id="detalleFecha"></span></p>
+          <div class="buttons">
+            <button id="btnEditar" class="button boton-dorado" type="button">EDITAR NINJA</button>
+            <button id="btnEliminar" class="button is-danger" type="button">ELIMINAR</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="vistaFormulario" hidden>
+      <button id="volverFormulario" class="button boton-volver" type="button">← CANCELAR Y VOLVER</button>
+      <div class="formulario-tarjeta">
+        <p class="sobrelinea">✦ CREA TU LEYENDA</p>
+        <h2 id="tituloFormulario" class="titulo-seccion">NUEVO NINJA</h2>
+        <p class="ayuda-formulario">Los campos con * son obligatorios.</p>
+        <form id="formPersonaje" novalidate>
+          <div class="columns">
+            <div class="column">
+              <div class="field">
+                <label class="label" for="nombre">Nombre *</label>
+                <div class="control"><input id="nombre" class="input" type="text" maxlength="45" placeholder="Ej. Lloyd" required></div>
+                <p id="errorNombre" class="help is-danger" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="column">
+              <div class="field">
+                <label class="label" for="rol">Elemento / rol *</label>
+                <div class="control select is-fullwidth">
+                  <select id="rol" required>
+                    <option value="">Selecciona un elemento</option>
+                    <option>Fuego</option>
+                    <option>Rayo</option>
+                    <option>Tierra</option>
+                    <option>Hielo</option>
+                    <option>Energía</option>
+                    <option>Agua</option>
+                    <option>Otro</option>
+                  </select>
+                </div>
+                <p id="errorRol" class="help is-danger" aria-live="polite"></p>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label" for="origen">Origen</label>
+            <div class="control"><input id="origen" class="input" type="text" maxlength="65" placeholder="Ej. Ciudad de Ninjago"></div>
+          </div>
+          <div class="field">
+            <label class="label" for="imagen">Imagen PNG o JPG (opcional)</label>
+            <div class="control"><input id="imagen" class="input" type="text" placeholder="imagenes/lloyd.jpg"></div>
+            <p class="help">Guarda una imagen en la carpeta imagenes y escribe su ruta. Si no tienes imagen, aparecerán las iniciales.</p>
+            <p id="errorImagen" class="help is-danger" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label class="label" for="descripcion">Descripción</label>
+            <div class="control"><textarea id="descripcion" class="textarea" rows="3" maxlength="300" placeholder="Describe las habilidades de tu ninja..."></textarea></div>
+          </div>
+          <div class="buttons acciones-formulario">
+            <button class="button boton-dorado" type="submit">GUARDAR NINJA</button>
+            <button id="btnCancelar" class="button is-light" type="button">CANCELAR</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina Camaron_salteado">
+    <div class="container">NINJAGO <span>✦</span> COLECCIÓN DE NINJAS <span>✦</span> PROYECTO ESCOLAR</div>
+  </footer>
+</body>
+</html>

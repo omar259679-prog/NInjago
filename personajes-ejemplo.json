@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "nombre": "Kai",
+    "rol": "Fuego",
+    "origen": "Ninjago",
+    "imagen": "imagenes/kai.jpg",
+    "descripcion": "El ninja rojo domina el fuego. Es valiente, decidido y siempre protege a sus amigos.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "nombre": "Jay",
+    "rol": "Rayo",
+    "origen": "Ninjago",
+    "imagen": "imagenes/jay.jpg",
+    "descripcion": "El ninja azul controla el rayo. Es ingenioso, bromista y un gran inventor.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": "3",
+    "nombre": "Cole",
+    "rol": "Tierra",
+    "origen": "Ninjago",
+    "imagen": "imagenes/cole.jpg",
+    "descripcion": "El ninja de la tierra destaca por su fuerza, lealtad y gran corazón.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": "4",
+    "nombre": "Zane",
+    "rol": "Hielo",
+    "origen": "Ninjago",
+    "imagen": "imagenes/zane.jpg",
+    "descripcion": "El maestro del hielo es un nindroide tranquilo, inteligente y muy leal.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": "5",
+    "nombre": "Lloyd",
+    "rol": "Energía",
+    "origen": "Ninjago",
+    "imagen": "imagenes/lloyd.jpg",
+    "descripcion": "El Ninja Verde controla la energía y guía al equipo para defender Ninjago.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  },
+  {
+    "id": "6",
+    "nombre": "Nya",
+    "rol": "Agua",
+    "origen": "Ninjago",
+    "imagen": "imagenes/nya.jpg",
+    "descripcion": "La maestra del agua es fuerte, independiente y una excelente mecánica.",
+    "fechaCreacion": "2026-10-14T12:00:00Z"
+  }
+]
