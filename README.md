@@ -1,6 +1,6 @@
 # Ninjago — Colección de ninjas
 
-**Alumno/a:** [Escribe tu nombre]  
+**Alumno/a:** Omar Alexis 
 **Materia:** LAD319 — Desarrollo de Aplicaciones Web  
 **GitHub Pages:** [Pega aquí tu URL]  
 **Repositorio:** [Pega aquí tu URL]
