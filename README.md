@@ -2,8 +2,8 @@
 
 **Alumno/a:** Omar Alexis 
 **Materia:** LAD319 — Desarrollo de Aplicaciones Web  
-**GitHub Pages:** [Pega aquí tu URL]  
-**Repositorio:** [Pega aquí tu URL]
+**GitHub Pages:**(https://omar259679-prog.github.io/NInjago/) 
+**Repositorio:** (https://github.com/omar259679-prog/NInjago)
 
 ## Descripción
 
